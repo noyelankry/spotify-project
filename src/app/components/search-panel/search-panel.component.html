@@ -1,0 +1,10 @@
+<div>
+    <div class="search-bar-wrapper">
+        <spot-search-bar (search)="onSongSearch($event)"></spot-search-bar>
+    </div>
+
+    <div class="search-results-wrapper">
+        <spot-search-results [songs]="songsList"></spot-search-results>
+    </div>
+
+</div>

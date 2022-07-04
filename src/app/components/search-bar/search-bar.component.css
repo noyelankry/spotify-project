@@ -1,0 +1,32 @@
+* {
+    color: black;
+}
+
+input {
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    display: inline;
+    border: none;
+    background-color: seagreen;
+    border-radius: 10px;
+    height: 30px;
+    font-size: large;
+}
+
+button:hover {
+    background-color: rgb(114, 182, 144)
+}
+
+.search-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    margin-top: 20px;
+}
