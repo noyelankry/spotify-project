@@ -10,6 +10,7 @@ import { SONGS_MOCK } from 'src/mock-data/SONGS_MOCK';
 export class SearchPanelComponent implements OnInit {
   status: string = ''
   songsList: Song[] = []
+
   onSongSearch(term: string) {
     this.status = "search clicked! term:" + term;
     this.songsList = SONGS_MOCK;

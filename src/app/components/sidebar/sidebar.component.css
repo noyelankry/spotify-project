@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+
 * {
-    display: flex;
-    flex-direction: column;
     text-decoration: none;
-    color: black;
+    font-family: 'Urbanist';
+}
+
+.nav-links {
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nav-links>a {
+    display: inline;
+    margin: 20px;
 }
