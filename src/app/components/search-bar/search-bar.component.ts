@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'spot-search-bar',

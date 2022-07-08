@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  title: string = 'MY SPOTIFY SEARCH.'
   constructor() { }
 
   ngOnInit(): void {

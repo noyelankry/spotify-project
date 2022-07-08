@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SongsService } from 'src/app/services/songs.service';
 
 @Component({
   selector: 'spot-footer',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  resultsCounter: number = 0
+  constructor(private _songsService: SongsService) { }
 
   ngOnInit(): void {
+    this.resultsCounter = this._songsService.getSongs().length;
+
   }
 
 }

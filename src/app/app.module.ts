@@ -12,6 +12,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { SongItemComponent } from './components/song-item/song-item.component';
+import { SongsService } from './services/songs.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { SongItemComponent } from './components/song-item/song-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SongsService],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

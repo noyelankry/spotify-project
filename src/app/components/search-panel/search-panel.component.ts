@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Song } from 'src/types/interfaces/models/song';
-import { SONGS_MOCK } from 'src/mock-data/SONGS_MOCK';
+import { SongsService } from 'src/app/services/songs.service';
 
 @Component({
   selector: 'spot-search-panel',
@@ -11,12 +11,12 @@ export class SearchPanelComponent implements OnInit {
   status: string = ''
   songsList: Song[] = []
 
+  constructor(private _songsService: SongsService) { }
+
   onSongSearch(term: string) {
     this.status = "search clicked! term:" + term;
-    this.songsList = SONGS_MOCK;
+    this.songsList = this._songsService.getSongs();
   }
-  constructor() { }
-
   ngOnInit(): void {
   }
 
