@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Song } from 'src/types/interfaces/models/song';
 import { SongsService } from 'src/app/services/songs.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'spot-search-panel',
@@ -8,15 +9,16 @@ import { SongsService } from 'src/app/services/songs.service';
   styleUrls: ['./search-panel.component.css']
 })
 export class SearchPanelComponent implements OnInit {
-  status: string = ''
   songsList: Song[] = []
 
   constructor(private _songsService: SongsService) { }
 
   onSongSearch(term: string) {
-    this.status = "search clicked! term:" + term;
-    this.songsList = this._songsService.getSongs();
+    this._songsService.getSongs().subscribe((searchResults: Song[]) => {
+      this.songsList = searchResults
+    })
   }
+
   ngOnInit(): void {
   }
 

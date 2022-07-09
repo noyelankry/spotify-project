@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from 'src/app/services/app.service';
+import { SongsService } from 'src/app/services/songs.service';
 
 @Component({
   selector: 'spot-layout',
@@ -8,14 +8,9 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor(private appService: AppService) { }
+  constructor(private songService: SongsService) { }
 
   ngOnInit(): void {
-    this.getSongsFromAPI()
-  }
-
-  getSongsFromAPI() {
-    this.appService.getSongs().subscribe()
   }
 
 }

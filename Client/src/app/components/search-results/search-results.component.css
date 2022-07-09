@@ -1,3 +1,7 @@
-* {
+spot-song-item {
     margin: 20px;
+}
+
+div.results-wrapper {
+    padding-left: 20px;
 }
