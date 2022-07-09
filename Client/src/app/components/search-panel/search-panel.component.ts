@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Song } from 'src/types/interfaces/models/song';
 import { SongsService } from 'src/app/services/songs.service';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'spot-search-panel',
@@ -14,7 +13,9 @@ export class SearchPanelComponent implements OnInit {
   constructor(private _songsService: SongsService) { }
 
   onSongSearch(term: string) {
-    this._songsService.getSongs().subscribe((searchResults: Song[]) => {
+    this._songsService.searchSpotify(term)
+
+    this._songsService.getSongs().subscribe((searchResults) => {
       this.songsList = searchResults
     })
   }
