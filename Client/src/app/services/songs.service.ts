@@ -8,6 +8,7 @@ import { idText } from 'typescript';
 export class SongsService {
 
   songsRes: Song[] = []
+  status: string = ''
 
   clientId: string = '1866bcd156c04721bd5d669b75a0d5f7'
   clientSecret: string = '3418b612e667483096772b57fb704ddb'
@@ -44,5 +45,6 @@ export class SongsService {
       })
     }
     this.songsRes = songs
+    this.status = `The search has returned ${songs.length} results!`
   }
 }

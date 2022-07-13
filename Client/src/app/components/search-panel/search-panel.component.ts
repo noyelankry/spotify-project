@@ -8,13 +8,12 @@ import { SongsService } from 'src/app/services/songs.service';
   styleUrls: ['./search-panel.component.css']
 })
 export class SearchPanelComponent implements OnInit {
-  songsList: Song[] = []
+
 
   constructor(public _songsService: SongsService) { }
 
   onSongSearch(term: string) {
     this._songsService.searchSpotify(term)
-    this.songsList = this._songsService.songsRes
   }
 
   ngOnInit(): void {
