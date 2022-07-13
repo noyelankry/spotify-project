@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { SongItemComponent } from './components/song-item/song-item.component';
 import { SongsService } from './services/songs.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     SearchPanelComponent,
     SearchResultsComponent,
     SearchBarComponent,
-    SongItemComponent
+    SongItemComponent,
+    LoginComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
