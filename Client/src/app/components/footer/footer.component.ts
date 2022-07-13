@@ -8,14 +8,10 @@ import { Song } from 'src/types/interfaces/models/song';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  resultsCounter: number = 0
 
-  constructor(private _songsService: SongsService) { }
+  constructor(public _songsService: SongsService) { }
 
   ngOnInit(): void {
-    this._songsService.getResultQty().subscribe(
-      res => this.resultsCounter = res
-    )
   }
 
 }

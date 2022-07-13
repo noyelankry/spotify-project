@@ -10,14 +10,11 @@ import { SongsService } from 'src/app/services/songs.service';
 export class SearchPanelComponent implements OnInit {
   songsList: Song[] = []
 
-  constructor(private _songsService: SongsService) { }
+  constructor(public _songsService: SongsService) { }
 
   onSongSearch(term: string) {
     this._songsService.searchSpotify(term)
-
-    this._songsService.getSongs().subscribe((searchResults) => {
-      this.songsList = searchResults
-    })
+    this.songsList = this._songsService.songsRes
   }
 
   ngOnInit(): void {

@@ -7,21 +7,12 @@ import { idText } from 'typescript';
 })
 export class SongsService {
 
-  resultsQty = new EventEmitter<number>()
-  songsRes = new EventEmitter<Song[]>()
+  songsRes: Song[] = []
 
   clientId: string = '1866bcd156c04721bd5d669b75a0d5f7'
   clientSecret: string = '3418b612e667483096772b57fb704ddb'
 
   constructor() { }
-
-  getSongs() {
-    return this.songsRes
-  }
-
-  getResultQty() {
-    return this.resultsQty
-  }
 
   async searchSpotify(searchTerm: string): Promise<any> {
     let songs = []
@@ -52,8 +43,6 @@ export class SongsService {
         return { artist, songName }
       })
     }
-    this.songsRes.emit(songs)
-    this.resultsQty.emit(songs.length)
-    this.getSongs()
+    this.songsRes = songs
   }
 }
